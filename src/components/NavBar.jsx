@@ -1,23 +1,23 @@
 import React from 'react'
-import {Container, Navbar, Nav} from 'react-bootstrap'
+import {Container, Navbar, Nav, NavDropdown} from 'react-bootstrap'
 
 export const NavBar = () => {
     return (
         <div>
-            <Navbar bg="light" variant="light">
+            <Navbar collapseOnSelect expand="lg" bg="light" variant="light">
                 <Container>
-                  <Navbar.Brand href="#home"><img src="./images/logo.png"/></Navbar.Brand>
-                    <Nav >
-                        <Nav.Link href="#home">Productos</Nav.Link>
-                        <Nav.Link href="#features">Cómo Funciona</Nav.Link>
-                        <Nav.Link href="#pricing">Contacto</Nav.Link>
-                    </Nav>
+                    <Navbar.Brand href="/"><img src="./images/logo.png"/></Navbar.Brand>
+                    <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+                    <Navbar.Collapse >
+                        <Nav className="nav">
+                            <Nav.Link href="/">Productos</Nav.Link>
+                            <Nav.Link href="/">Cómo Funciona</Nav.Link>
+                            <Nav.Link href="/">Contacto</Nav.Link> 
+                        </Nav>  
+                    </Navbar.Collapse>
                 </Container>
             </Navbar>
         </div>
-
-        
-
     )
 }
 
