@@ -8,14 +8,14 @@ export const Carrousel = () => {
                 <Carousel.Item interval={4000}>
                     <img 
                         className="d-block w-100"
-                        src="./images/carousel1.jpg"
+                        src="./assets//images/carousel1.jpg"
                         alt="First slide"
                     />
                 </Carousel.Item>
                 <Carousel.Item interval={4000}>
                     <img
                         className="d-block w-100"
-                        src="./images/carousel2.jpg"
+                        src="./assets//images/carousel2.jpg"
                         alt="Second slide"
                     />
                 </Carousel.Item>
