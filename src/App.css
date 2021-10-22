@@ -17,6 +17,17 @@
   height: 45rem;
   opacity: 0.7;
 }
+.mt-2{
+  margin-left: 13%; 
+}
+.input-group{
+  justify-content: center;
+}
+.input-group-text{
+  width: 50%;
+  justify-content: center;
+}
+
 .navbar-brand, Nav {
 	-webkit-animation: scale-in-center 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 	        animation: scale-in-center 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
