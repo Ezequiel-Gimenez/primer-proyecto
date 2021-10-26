@@ -14,7 +14,7 @@ export default function ItemCount ({ stock, initial, onAdd }) {
   };
  
   return (
-    <div>
+    <div className="card1">
       <Card style={{ width: '15rem' }}>
             {/* <Card.Img variant="top" src="holder.js/100px180" /> */}
             <Card.Body>
@@ -25,7 +25,7 @@ export default function ItemCount ({ stock, initial, onAdd }) {
                       <InputGroup.Text>{count}</InputGroup.Text>
                     <Button variant="outline-secondary" onClick={subirNumero}>+</Button>
                   </InputGroup>
-                    <Button className="mt-2" variant="success" onClick={() => onAdd(count)}>Agregar al carrito</Button>
+                    <Button className="button1" variant="success" onClick={() => onAdd(count)}>Agregar al carrito</Button>
             </Card.Body>
       </Card>
     </div>

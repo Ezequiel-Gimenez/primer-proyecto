@@ -1,4 +1,5 @@
 import ItemCount from "./ItemCount"
+import ItemList from "./ItemList"
 
 export const ItemListContainer = ({greeting}) => {
 
@@ -8,9 +9,12 @@ export const ItemListContainer = ({greeting}) => {
     }
 
     return (
-        <div>
+        <div className="grid">
             <p>{greeting}</p>
-            <ItemCount stock={8} initial={1} onAdd={handleClick}/>
+            <ItemCount stock={8} initial={1} onAdd={handleClick} />
+            <ItemList />
         </div>
-    )
+    ) 
 }
+
+
