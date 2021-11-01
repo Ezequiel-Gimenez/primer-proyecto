@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Card, Button, InputGroup } from 'react-bootstrap'
+import { Button, InputGroup } from 'react-bootstrap'
+import { useState } from 'react';
 
 export default function ItemCount ({ stock, initial, onAdd }) {
 
@@ -10,24 +10,19 @@ export default function ItemCount ({ stock, initial, onAdd }) {
   };
 
   const subirNumero = () => {
-    count < stock ? setCount (count + 1) : alert("Máximo 8 unidades")
+    count < stock ? setCount (count + 1) : alert("Máximo 10 unidades")
   };
  
   return (
     <div className="card1">
-      <Card style={{ width: '15rem' }}>
-            {/* <Card.Img variant="top" src="holder.js/100px180" /> */}
-            <Card.Body>
-                <Card.Title></Card.Title>
-                <Card.Text></Card.Text>
-                  <InputGroup>
-                    <Button variant="outline-secondary" onClick={bajarNumero}>-</Button>
-                      <InputGroup.Text>{count}</InputGroup.Text>
-                    <Button variant="outline-secondary" onClick={subirNumero}>+</Button>
-                  </InputGroup>
-                    <Button className="button1" variant="success" onClick={() => onAdd(count)}>Agregar al carrito</Button>
-            </Card.Body>
-      </Card>
+      <InputGroup className="count">
+        <Button variant="outline-secondary" onClick={bajarNumero}>-</Button>
+          <InputGroup.Text>{count}</InputGroup.Text>
+        <Button variant="outline-secondary" onClick={subirNumero}>+</Button>
+      </InputGroup>
+      <div className="buttons">
+        <button className="add" onClick={() => onAdd(count)}>Agregar al carrito</button>
+      </div>
     </div>
   );
 }

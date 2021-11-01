@@ -1,18 +1,18 @@
-import { NavBar } from './components/NavBar';
-import { Carrousel } from './components/Carrousel';
+import { NavBar } from './components/containers/NavBar';
 import { ItemListContainer } from './components/containers/ItemListContainer';
-import ItemCount from './components/containers/ItemCount';
+import ItemDetailContainter from './components/containers/ItemDetailContainer';
+//import { Carrousel } from './components/containers/Carrousel';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-function App() {
 
+function App() {
   return (
     <div className="App">
-      <NavBar />
-      <ItemListContainer greeting='Hola soy ItemListContainer'/> 
-      <Carrousel />
-      <ItemCount />
+      <NavBar /> 
+      {/* <Carrousel /> */}
+      <ItemListContainer /> 
+      <ItemDetailContainter /> 
     </div>
   );
 }
