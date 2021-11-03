@@ -6,7 +6,7 @@ const productos = [
         nombre: 'Piedra',
         descripcion: 'Medidas: 30cm x 50cm',
         precio: 130,
-        stock: '10',
+        stock: 10
     },
     {
         id: 2,
@@ -15,7 +15,7 @@ const productos = [
         nombre: 'Marmol',
         descripcion: 'Medidas: 30cm x 50cm',
         precio: 130,
-        stock: '10',
+        stock: 10
     },
     {
         id: 3,
@@ -24,7 +24,7 @@ const productos = [
         nombre: 'Adoquin',
         descripcion: 'Medidas: 30cm x 50cm',
         precio: 130,
-        stock: '10',
+        stock: 10
     },
     {
         id: 4,
@@ -33,7 +33,7 @@ const productos = [
         nombre: 'Travertino',
         descripcion: 'Medidas: 30cm x 50cm',
         precio: 130,
-        stock: '10',
+        stock: 10
     },
     {
         id: 5,
@@ -42,21 +42,48 @@ const productos = [
         nombre: 'Laja',
         descripcion: 'Medidas: 30cm x 50cm',
         precio: 130,
-        stock: '10',
+        stock: 10
     },
     {
         id: 6,
+        imagen: 'assets/images/colonial.jpg',
+        categoria: 'grandes',
+        nombre: 'Colonial',
+        descripcion: 'Medidas: 50cm x 50cm',
+        precio: 200,
+        stock: 10
+    },
+    {
+        id: 7,
+        imagen: 'assets/images/fantasia.jpg',
+        categoria: 'grandes',
+        nombre: 'Fantasia',
+        descripcion: 'Medidas: 50cm x 50cm',
+        precio: 200,
+        stock: 10
+    },
+    {
+        id: 8,
+        imagen: 'assets/images/roma.jpg',
+        categoria: 'grandes',
+        nombre: 'Roma',
+        descripcion: 'Medidas: 50cm x 50cm',
+        precio: 200,
+        stock: 10
+    },
+    {
+        id: 9,
         imagen: 'assets/images/molduras.jpg',
         categoria: 'molduras',
         nombre: 'Molduras',
-        descripcion: 'Para las terminaciones en peredes',
+        descripcion: 'Para las terminaciones en las paredes',
         precio: 200,
-        stock: '10',
+        stock: 10
     },
 ];
 
 export const getFetch = new Promise((resolve, reject)=>{
-    setTimeout(()=>{
+    setTimeout(() => {
         resolve (productos)
     }, 2000)
 })

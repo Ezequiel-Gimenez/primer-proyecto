@@ -1,4 +1,4 @@
-import { Button, InputGroup } from 'react-bootstrap'
+import { Button, InputGroup } from 'react-bootstrap';
 import { useState } from 'react';
 
 export default function ItemCount ({ stock, initial, onAdd }) {
