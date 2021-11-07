@@ -19,7 +19,7 @@ export const NavBar = () => {
                             </NavDropdown>
                             <Nav.Link>Cómo Funciona</Nav.Link>
                             <Nav.Link>Contacto</Nav.Link>                          
-                            <Nav.Link className="cart"><CartWidget /></Nav.Link> 
+                            <Nav.Link className="cart" as={Link} to="/cart"><CartWidget /></Nav.Link> 
                         </Nav>  
                     </Navbar.Collapse>
                 </Container>

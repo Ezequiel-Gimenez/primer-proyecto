@@ -27,11 +27,10 @@ const ItemListContainer = () =>{
     },[categoriaId])
     console.log(producto);
 
-
     return (
         <div className="grid">  
         { 
-            loading ? <h1>Cargando...</h1> :  
+            loading ? <h1 className="load">Cargando...</h1> :  
             <ItemList producto={producto}/>
         }
         </div>

@@ -44,6 +44,15 @@
     opacity: 1;
   }
 }
+.carrito{
+  margin-left: 50%;
+  margin-top: 3%;
+}
+
+.load{
+  margin-left: 230%;
+  margin-top: 60%;
+}
 
 /* CAROUSEL */
 .carousel-item img {

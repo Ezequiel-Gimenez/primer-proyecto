@@ -1,15 +1,20 @@
+import { useState } from 'react';
 import ItemCount from "./ItemCount"
 
 const ItemDetail = ({producto}) => {
 
-    const handleClick = (total) => {
-        alert(`Su item se agregó al carrito. Total del carrito: ${total}`)
-        console.log(`Su item se agregó al carrito. Total del carrito: ${total}`)
-    }
+    const [count, setCount] = useState(0)
+
     console.log(producto);
+
+    const onAdd = (cantidad) => {
+        setCount(cantidad)
+    }
+    console.log(count);
+
     return (
         <div className="detail">
-            <div >
+            <div>
                 <img className="images" src={producto.imagen} alt={producto.nombre} />
             </div>
             <div className="product">
@@ -18,7 +23,7 @@ const ItemDetail = ({producto}) => {
                 <h4>{producto.descripcion}</h4>
                 <p className="desc">En stock: {producto.stock} unidades</p>
                 <div className="buttons">
-                    <ItemCount stock={producto.stock} initial={1} onAdd={handleClick} /> 
+                    <ItemCount stock={producto.stock} initial={1} onAdd={onAdd} /> 
                 </div>
             </div>
         </div>    

@@ -10,7 +10,7 @@ const Item = ({prod}) =>{
                 <Card.Body className="card__content">
                     <Card.Title className="card__header">Modelo {prod.nombre}</Card.Title>                
                     <Card.Text>Precio: ${prod.precio}</Card.Text>
-                    <Link to={`/producto/${prod.id}`}><Button className="card__btn" variant="primary">Detalle del producto</Button></Link> 
+                    <Link to={`/producto/${prod.id}`}><Button className="card__btn" variant="secondary">Detalle del producto</Button></Link> 
                 </Card.Body>
             </Card>
         </div>
