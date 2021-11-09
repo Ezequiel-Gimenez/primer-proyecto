@@ -64,9 +64,9 @@
 .card1{
   width: 90%;
   justify-content: center;
-  margin-left: 0%; 
+   
   padding: 5%;
-  margin-top: 10%;
+ 
   margin: 5%
 }
 .input-group{
@@ -75,9 +75,6 @@
 .input-group-text{
   width: 45%;
   justify-content: center;
-}
-.add{
-  margin-top: 5%;
 }
 
 /* ITEM */
@@ -162,6 +159,8 @@
 .card__btn:hover span, .card__btn:active span {
   margin-left: 1.5rem;
 }
+
+
 
 /* ITEMDETAIL */
 
