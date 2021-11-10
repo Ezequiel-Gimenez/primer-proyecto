@@ -1,23 +1,22 @@
 import { useState } from 'react';
-import ItemCount from "./ItemCount"
+import ItemCount from "./ItemCount";
 import { Link } from 'react-router-dom';
+import { useCartContext } from './CartContext';
 
 const ItemDetail = ({producto}) => {
 
-    const [count, setCount] = useState(0)
     const [modificarBoton, setModificarBoton] = useState(false)
+  
+    const {cartList, mostrarListado, agregarAlCarrito} = useCartContext()
+        console.log(cartList);
+        console.log(mostrarListado());
+        console.log(agregarAlCarrito);
 
-    console.log(producto);
-
-    const onAdd = (cantidad) => {
-        setCount(cantidad)
-    }
-    console.log(count);
-
-    const OnAdd = () => {
-        onAdd(count)
-        setCount(1)
+    const OnAdd = (count) => {
         setModificarBoton(true)
+        agregarAlCarrito({producto, cantidad: count})
+        console.log('Se agregó al carrito:', count)
+        alert('Se agregó al carrito: ' + count + ' unidad/es')
     }
 
     return (
@@ -30,17 +29,17 @@ const ItemDetail = ({producto}) => {
                 <h2>${producto.precio}</h2>
                 <h4>{producto.descripcion}</h4>
                 <p className="desc">En stock: {producto.stock} unidades</p>
-                <div className="buttons">
-                    <ItemCount stock={producto.stock} initial={1} /> 
+                <div className="buttons">                   
                     <div className="agregar">
                         { 
                             modificarBoton 
                             ? 
                             <Link to={'/cart'}><button className="add">Finalizar Compra</button></Link>
-                            : 
-                            <button className="add" onClick={OnAdd}>Agregar al carrito</button>
+                            :
+                            <ItemCount stock={producto.stock} initial={1} onAdd={OnAdd}/>
                         }
                     </div>
+                    <Link to="/"><button className="add">Volver</button></Link>
                 </div>
             </div>
         </div>    

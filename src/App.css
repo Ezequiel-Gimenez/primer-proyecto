@@ -64,10 +64,8 @@
 .card1{
   width: 90%;
   justify-content: center;
-   
   padding: 5%;
- 
-  margin: 5%
+  margin: 6%
 }
 .input-group{
   justify-content: center;
@@ -75,6 +73,9 @@
 .input-group-text{
   width: 45%;
   justify-content: center;
+}
+.add{
+  margin: 5px;
 }
 
 /* ITEM */
@@ -160,8 +161,6 @@
   margin-left: 1.5rem;
 }
 
-
-
 /* ITEMDETAIL */
 
 .detail { 
@@ -171,7 +170,7 @@
   margin: auto;
   overflow: hidden;
   width: 820px;
-  height: 380px;
+  height: 420px;
   background: #F5F5F5;
   box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
   border-radius: 10px;
