@@ -1,9 +1,9 @@
 import { useParams } from 'react-router-dom';
 import { useState, useEffect } from "react";
 import { getFetch } from "../services/getFetch";
-import ItemList from "./ItemList";
+import {ItemList} from "./ItemList";
 
-const ItemListContainer = () =>{
+export const ItemListContainer = () =>{
     const [producto, setProduct] = useState ([]);
     const [loading, setLoading] = useState (true);
     const {categoriaId} = useParams()
@@ -36,5 +36,3 @@ const ItemListContainer = () =>{
         </div>
     ) 
 }
-export default ItemListContainer
-

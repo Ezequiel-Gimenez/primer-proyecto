@@ -1,6 +1,6 @@
-import Item from "./Item";
+import {Item} from "./Item";
 
-const ItemList = ({producto}) => {
+export const ItemList = ({producto}) => {
     return(
         <div className="card2">
             { 
@@ -9,5 +9,3 @@ const ItemList = ({producto}) => {
         </div>
     )
 }
-
-export default ItemList
