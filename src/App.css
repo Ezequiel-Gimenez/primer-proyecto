@@ -48,10 +48,13 @@
   margin-left: 50%;
   margin-top: 3%;
 }
-
 .load{
   margin-left: 230%;
   margin-top: 60%;
+}
+.load2{
+  margin-left: 140%;
+  margin-top: 20%;
 }
 
 /* ITEMCOUNT */
@@ -214,22 +217,18 @@ button:hover {
 }
 
 /* CART */
-
 .carritoVacio{
   margin-left: 45%;
   padding-top: 5%;
 }
-
 .hacerCompra{
   margin-left: 3%;
 }
-
 .titulo{
   margin-left: 35%;
   padding-top: 5%;
   padding: 3%;
 }
-
 .totalCart{
   padding: 3%;
 }

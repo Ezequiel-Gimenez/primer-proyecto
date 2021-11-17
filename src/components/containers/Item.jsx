@@ -1,7 +1,7 @@
 import { Card, Button } from 'react-bootstrap';
 import { Link } from "react-router-dom";
 
-export const Item = ({prod}) =>{
+export const Item = ({prod}) => {
     return(
         <div>
             <Card className="grid__item" key={prod.key} style={{ width: '18rem' }}>

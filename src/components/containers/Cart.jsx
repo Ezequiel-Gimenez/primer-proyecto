@@ -20,7 +20,7 @@ function Cart() {
 			) : (
 				<div>
 					<Container>
-						<h1 className="titulo">Carrito de compras</h1>
+						<h1 className="titulo">Carrito De Compras</h1>
 						<table className="table table-bordered table-active text-center">
 								<thead>
 									<tr className="fs-4 fw-bold">
@@ -49,7 +49,7 @@ function Cart() {
 								))}
 							</tbody>
 						</table>
-						<h4 className='totalCart'>{`Importe Total de la compra ${Intl.NumberFormat("es-AR",
+						<h4 className='totalCart'>{`Importe Total ${Intl.NumberFormat("es-AR",
 							{currency: "ARS", style: "currency"}).format(total())}`}
 						</h4>
 						<Button as={Link} to="/" variant="outline-secondary" className="mx-2">

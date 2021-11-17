@@ -7,7 +7,7 @@ export const NavBar = () => {
         <div>
             <Navbar collapseOnSelect expand="lg" bg="light" variant="light">
                 <Container>
-                    <Navbar.Brand><img src="./assets/images/logo.png" alt="logo"/></Navbar.Brand>
+                    <Navbar.Brand><img src="https://i.ibb.co/Byr9hWj/logo.png" alt="logo"/></Navbar.Brand>
                     <Navbar.Toggle aria-controls="responsive-navbar-nav"/>
                     <Navbar.Collapse>
                         <Nav className="nav">

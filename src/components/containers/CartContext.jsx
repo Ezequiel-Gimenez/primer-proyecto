@@ -12,31 +12,31 @@ const CartContextProvider = ({children}) => {
 
         const listaCarrito = [...cartList];
 
-        if (listaCarrito.find((prod) => prod.id === productos.producto.id) !== undefined) {  
+        if (listaCarrito.find((prod) => prod.id === productos.product.id) !== undefined) {  
 
-            listaCarrito.find((prod) => prod.id === productos.producto.id).cantidad += productos.cantidad;
-            setCartList(listaCarrito);    
+            listaCarrito.find((prod) => prod.id === productos.product.id).cantidad += productos.cantidad
+            setCartList(listaCarrito)   
 
         }else{
-            setCartList([...cartList, {...productos.producto, cantidad: productos.cantidad}]); 
+            setCartList([...cartList, {...productos.product, cantidad: productos.cantidad}])
         }
     }
 
     const removeItem = (id) => {
-        setCartList(cartList.filter(producto => producto.id !== id));
-    };
+        setCartList(cartList.filter(product => product.id !== id))
+    }
 
     const clear = () => {
-		setCartList([]);
-	};
+		setCartList([])
+	}
 
     const isInCart = () => {
-		return cartList.reduce((prev, next) => prev + next.cantidad, 0);
-	};
+		return cartList.reduce((prev, next) => prev + next.cantidad, 0)
+	}
 
     const total = () => {
-		return cartList.reduce((total, producto) => total + (producto.cantidad * producto.precio) ,0)
-		};
+		return cartList.reduce((total, product) => total + (product.cantidad * product.precio), 0)
+		}
 
     return(
         <CartContext.Provider 
