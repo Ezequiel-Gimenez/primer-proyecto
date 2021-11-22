@@ -11,14 +11,12 @@ export const NavBar = () => {
                     <Navbar.Toggle aria-controls="responsive-navbar-nav"/>
                     <Navbar.Collapse>
                         <Nav className="nav">
+                            <Nav.Link as={Link} to="/">Inicio</Nav.Link>
                             <NavDropdown title="Productos">
-                                <NavDropdown.Item as={Link} to="/">Todos los productos</NavDropdown.Item>
                                 <NavDropdown.Item as={Link} to="/categoria/grandes">Placas grandes</NavDropdown.Item>
                                 <NavDropdown.Item as={Link} to="/categoria/medianas">Placas medianas</NavDropdown.Item>
                                 <NavDropdown.Item as={Link} to="/categoria/molduras">Molduras</NavDropdown.Item>
-                            </NavDropdown>
-                            <Nav.Link>Cómo Funciona</Nav.Link>
-                            <Nav.Link>Contacto</Nav.Link>                          
+                            </NavDropdown>                          
                             <Nav.Link className="cart" as={Link} to="/cart"><CartWidget /></Nav.Link> 
                         </Nav>  
                     </Navbar.Collapse>
@@ -27,5 +25,3 @@ export const NavBar = () => {
         </div>
     )
 }
-
-

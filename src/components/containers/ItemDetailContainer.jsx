@@ -17,7 +17,6 @@ const ItemDetailContainter = () => {
         .catch(err => console.log(err))
         .finally(()=> setLoading(false)) 
     },[productoId])
-    console.log(producto);
 
     return(
         <div className="card2">

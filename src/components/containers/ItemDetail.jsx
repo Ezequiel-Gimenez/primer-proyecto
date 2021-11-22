@@ -13,11 +13,10 @@ const ItemDetail = ({product}) => {
     const OnAdd = (count) => {
         setModificarBoton(true)
         addItem({product, cantidad: count})
-        console.log('Se agregó al carrito:', count, 'Producto/s')
     }
 
     return (
-        <div className="detail" >
+        <div className="detail">
             <div >
                 <img className="images" src={product.imagen} alt={product.nombre} />
             </div>

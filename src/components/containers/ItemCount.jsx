@@ -11,8 +11,14 @@ export default function ItemCount ({ stock, initial, onAdd }) {
   };
 
   const subirNumero = () => {
-    count < stock ? setCount (count + 1) : alert("Máximo 10 unidades")
-  };
+    if (stock === 0) {
+      alert(`Sin Stock disponible`)
+    }
+    else if (count >= stock) {
+      alert(`Máximo ${stock} unidades`)
+    }
+    else {setCount(count + 1)}
+  }
 
   return (
     <div className="card1">

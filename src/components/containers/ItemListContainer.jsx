@@ -27,7 +27,6 @@ export const ItemListContainer = () =>{
             .finally(()=> setLoading(false)) 
         }
     },[categoriaId])
-    console.log(producto);
 
     return (
         <div className="grid">  
