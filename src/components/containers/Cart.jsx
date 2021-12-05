@@ -1,33 +1,29 @@
 import { useCartContext } from "./CartContext";
 import { Link } from "react-router-dom";
-import { Button, Container, Modal, FloatingLabel, Form, Col } from "react-bootstrap";
 import { getFirestore } from '../services/getFirestore';
+import { Button, Container } from "react-bootstrap";
 import { useState } from 'react';
+import CartForm from "./CartForm";
 import firebase from "firebase/app";
 import 'firebase/firestore';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrashAlt } from '@fortawesome/free-solid-svg-icons';
 
 function Cart() {
-
 	const {cartList, isInCart, total, clear, removeItem} = useCartContext();
-
-	const [show, setShow] = useState(false)
 	const [showOrder, setIdOrder] = useState(false)
     const [orderId, setOrderId] = useState({})
-	  
-	const handleClose = () => setShow(false)
+	const [show, setShow] = useState(false)
+
+    const handleClose = () => setShow(false)
 	const handleShow = () => setShow(true)
-
-	const [formData, setFormData] = useState({
-        name: '',
-        phone: '',
-        email: ''
-    })
-
+	
+	const InitialForm = {name: '', phone: '', email: ''}
+	const [formData, setFormData] = useState(InitialForm)
+	
 	const handleCloseOrder = () => {
         clear()
-        setIdOrder(false)
+    	setIdOrder(false)
     }
 
 	const handleChange=(e)=> {
@@ -35,7 +31,6 @@ function Cart() {
     }
 
 	const generarOrden = (e) => {
-	
 		e.preventDefault()
 	
 		let order = {}
@@ -46,7 +41,6 @@ function Cart() {
 			const id = cartItem.id;
             const nombre = cartItem.nombre;
             const precio = cartItem.precio * cartItem.cantidad;       
-
 			return {id, nombre, precio}
 		})
 	
@@ -55,16 +49,9 @@ function Cart() {
 		.then(resp => setOrderId(resp.id))
 		.catch(err => console.log(err))
 		.finally(()=> {
-	
-			setFormData({
-				name: '',
-				phone: '',
-				email: ''
-			})
-		    
+			setFormData(InitialForm)
 			setShow(false)
-			setIdOrder(true)  
-					
+			setIdOrder(true)  			
 		})
 	
 		const updateItems = dbQuery.collection('items').where(
@@ -72,15 +59,13 @@ function Cart() {
 		)
 			 
 		const batch = dbQuery.batch()
-			 
+		 
 		updateItems.get().then(collection=> {
-
 			collection.docs.forEach(docSnapshot => {
 				batch.update(docSnapshot.ref, {
 					stock: docSnapshot.data().stock - cartList.find(item => item.id === docSnapshot.id).cantidad
 				})
-			})
-			    
+			})  
 			batch.commit()
 			.catch(err => console.log(err))					
 		})
@@ -142,43 +127,17 @@ function Cart() {
 					</Container>
 				</div>
 			)}
-			<Modal show={show} onHide={handleClose} backdrop="static" keyboard={false}>
-				<Modal.Header closeButton>
-					<Modal.Title>Finalizar Compra</Modal.Title>
-				</Modal.Header>
-				<Modal.Body>
-					Ingrese sus datos para finalizar la compra.
-				</Modal.Body>
-				<Form onSubmit={generarOrden} onChange={handleChange}>
-                    <FloatingLabel controlId="name" label="Nombre" className="mb-3">
-                        <Form.Control required type="text" name="name" placeholder="Nombre" defaultValue={formData.name} />
-                    </FloatingLabel>
-                    <FloatingLabel controlId="phone" label="Telefono" className="mb-3">
-                        <Form.Control required type="number" name="phone" placeholder="Telefono" defaultValue={formData.phone} />
-                    </FloatingLabel>
-                    <FloatingLabel controlId="email" label="Email" className="mb-3">
-                        <Form.Control required type="email" name="email" placeholder="Email" defaultValue={formData.email} />
-                    </FloatingLabel>
-					<Modal.Footer>
-						<Button variant="secondary" onClick={handleClose}>Cerrar</Button>
-						<Button type="submit" variant="success">Finalizar Compra</Button>
-					</Modal.Footer>
-				</Form >
-			</Modal>
-			<Modal centered show={showOrder} onHide={handleCloseOrder}>
-                <Modal.Header closeButton>
-                    <Modal.Title>Orden de compra generada</Modal.Title>
-                </Modal.Header>
-                <Modal.Body>
-                    <Col>
-						Orden De Compra: <h5 className='text-info'>{orderId}</h5>
-					</Col>
-                    <Col>
-						Importe Total: <h4 className='totalCart'>{`${Intl.NumberFormat("es-AR", {currency: "ARS", style: "currency"}).format(total())}`}</h4>
-					</Col>
-					<h5 className='text-success'>Muchas gracias por su compra!</h5>
-                </Modal.Body>
-            </Modal>
+			<CartForm
+				handleCloseOrder={handleCloseOrder}
+				handleChange={handleChange}
+				handleClose={handleClose}
+				generarOrden={generarOrden}
+				show={show}
+				showOrder={showOrder}
+				formData={formData}
+				orderId={orderId}
+				total={total}		
+			/>
 		</div>
 	)
 }

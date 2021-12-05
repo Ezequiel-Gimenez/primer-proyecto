@@ -3,7 +3,6 @@ import { useState } from 'react';
 import { Link } from "react-router-dom";
 
 export default function ItemCount ({ stock, initial, onAdd }) {
-
   const [count, setCount] = useState(initial);
 
   const bajarNumero = () => {
@@ -24,7 +23,7 @@ export default function ItemCount ({ stock, initial, onAdd }) {
     <div className="card1">
       <InputGroup className="count">
         <Button variant="outline-secondary" onClick={bajarNumero}>-</Button>
-          <InputGroup.Text>{count}</InputGroup.Text>
+        <InputGroup.Text>{count}</InputGroup.Text>
         <Button variant="outline-secondary" onClick={subirNumero}>+</Button>
         <button className="add" onClick={() => onAdd(count)}>Agregar al carrito</button>
       </InputGroup>

@@ -6,7 +6,7 @@ export const CartWidget = () => {
 
     const { isInCart } = useCartContext()
 
-    if (isInCart()!==0){
+    if (isInCart()!==0) {
         return (
             <div>
                 <FontAwesomeIcon icon={faShoppingCart} />{` ` + isInCart()}
@@ -16,7 +16,7 @@ export const CartWidget = () => {
 
     return (
         <div>
-            <FontAwesomeIcon icon={faShoppingCart}/>
+            <FontAwesomeIcon icon={faShoppingCart} />
         </div>
     )
 }

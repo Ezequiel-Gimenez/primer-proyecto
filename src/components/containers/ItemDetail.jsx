@@ -4,9 +4,7 @@ import { Link } from 'react-router-dom';
 import ItemCount from "./ItemCount";
 
 const ItemDetail = ({product}) => {
-
     const [modificarBoton, setModificarBoton] = useState(false)
-  
     const {cartList, addItem} = useCartContext()
     console.log(cartList);
         
@@ -17,7 +15,7 @@ const ItemDetail = ({product}) => {
 
     return (
         <div className="detail">
-            <div >
+            <div>
                 <img className="images" src={product.imagen} alt={product.nombre} />
             </div>
             <div className="product">

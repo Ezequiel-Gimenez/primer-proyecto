@@ -9,7 +9,6 @@ const CartContextProvider = ({children}) => {
     const [cartList, setCartList] = useState([])
 
     function addItem(productos) {
-
         const listaCarrito = [...cartList];
 
         if (listaCarrito.find((prod) => prod.id === productos.product.id) !== undefined) {  
@@ -17,7 +16,7 @@ const CartContextProvider = ({children}) => {
             listaCarrito.find((prod) => prod.id === productos.product.id).cantidad += productos.cantidad
             setCartList(listaCarrito)   
 
-        }else{
+        } else {
             setCartList([...cartList, {...productos.product, cantidad: productos.cantidad}])
         }
     }
@@ -36,7 +35,7 @@ const CartContextProvider = ({children}) => {
 
     const total = () => {
 		return cartList.reduce((total, product) => total + (product.cantidad * product.precio), 0)
-		}
+	}
 
     return(
         <CartContext.Provider 

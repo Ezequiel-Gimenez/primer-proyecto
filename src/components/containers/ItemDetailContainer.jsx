@@ -4,7 +4,6 @@ import { getFirestore } from '../services/getFirestore';
 import ItemDetail from './ItemDetail';
 
 const ItemDetailContainter = () => {
-
     const [producto, setProduct] = useState ({});
     const [loading, setLoading] = useState (true);
     const {productoId} = useParams();
@@ -20,10 +19,7 @@ const ItemDetailContainter = () => {
 
     return(
         <div className="card2">
-            { 
-                loading ? <h1 className="load2" >Cargando...</h1> :
-                <ItemDetail product={producto}/> 
-            }
+            {loading ? <h1 className="load2" >Cargando...</h1> : <ItemDetail product={producto} />}
         </div>
     )
 }
