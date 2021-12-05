@@ -1,6 +1,6 @@
 # Blotter Plac - E-commerce App
 
-Proyecto terminado del curso de React Js de CoderHouse.
+Proyecto terminado del curso de React Js de CoderHouse brave-swirles-844993.netlify.app.
 
 
 ## Estructura del proyecto

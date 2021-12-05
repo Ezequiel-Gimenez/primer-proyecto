@@ -56,7 +56,6 @@
   margin-left: 140%;
   margin-top: 20%;
 }
-
 /* ITEMCOUNT */
 .card1{
   width: 90%;
@@ -74,9 +73,7 @@
 .add{
   margin: 5px;
 }
-
 /* ITEM */
-
 .card2 {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr ;  
@@ -157,9 +154,7 @@
 .card__btn:hover span, .card__btn:active span {
   margin-left: 1.5rem;
 }
-
 /* ITEMDETAIL */
-
 .detail { 
   top: 30%;
   left: 50%;
@@ -215,7 +210,6 @@ button:hover {
   background: #555555;
   transition: all 0.4s ease-in-out;
 }
-
 /* CART */
 .carritoVacio{
   margin-left: 45%;
