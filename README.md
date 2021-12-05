@@ -1,6 +1,6 @@
 # Blotter Plac - E-commerce App
 
-Proyecto terminado del curso de React Js de CoderHouse. https://hungry-golick-0ec0fc.netlify.app
+Proyecto terminado del curso de React Js de CoderHouse. https://nostalgic-turing-95eb58.netlify.app
 
 
 ## Estructura del proyecto
