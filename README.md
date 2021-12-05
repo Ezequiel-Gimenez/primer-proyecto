@@ -1,6 +1,6 @@
 # Blotter Plac - E-commerce App
 
-Proyecto terminado del curso de React Js de CoderHouse brave-swirles-844993.netlify.app.
+Proyecto terminado del curso de React Js de CoderHouse. https://hungry-golick-0ec0fc.netlify.app
 
 
 ## Estructura del proyecto
@@ -25,7 +25,7 @@ Lo iniciamos desde npm:
 
 ## Librerias
 
-### `react-router-dom 5.3.0` - Usado para navegar dentro de la app por medio de el navbar y demas botones de los items.
+### `React-router-dom 5.3.0` - Usado para navegar dentro de la app por medio de el navbar y demas botones de los items.
 
 ### `React Bootstrap 5.1.1` - Usado para darle estilo a la app con los estilos ya predefinidos.
 
