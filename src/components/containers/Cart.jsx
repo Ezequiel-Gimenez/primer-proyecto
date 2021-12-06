@@ -26,7 +26,7 @@ function Cart() {
     	setIdOrder(false)
     }
 
-	const handleChange=(e)=> {
+	const handleChange=(e) => {
         setFormData({...formData, [e.target.name]: e.target.value})
     }
 
@@ -60,7 +60,7 @@ function Cart() {
 			 
 		const batch = dbQuery.batch()
 		 
-		updateItems.get().then(collection=> {
+		updateItems.get().then(collection => {
 			collection.docs.forEach(docSnapshot => {
 				batch.update(docSnapshot.ref, {
 					stock: docSnapshot.data().stock - cartList.find(item => item.id === docSnapshot.id).cantidad

@@ -21,7 +21,7 @@ export default function ItemCount ({ stock, initial, onAdd }) {
 
   return (
     <div className="card1">
-      <InputGroup className="count">
+      <InputGroup>
         <Button variant="outline-secondary" onClick={bajarNumero}>-</Button>
         <InputGroup.Text>{count}</InputGroup.Text>
         <Button variant="outline-secondary" onClick={subirNumero}>+</Button>

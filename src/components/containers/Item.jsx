@@ -6,10 +6,10 @@ export const Item = ({prod}) => {
         <div>
             <Card className="grid__item" key={prod.key} style={{ width: '18rem' }}>
               <Card.Img className="card__img" variant="top" src={prod.imagen} alt={prod.nombre} />
-                <Card.Body className="card__content">
-                    <Card.Title className="card__header">Modelo {prod.nombre}</Card.Title>                
+                <Card.Body>
+                    <Card.Title>Modelo {prod.nombre}</Card.Title>                
                     <Card.Text>Precio: ${prod.precio}</Card.Text>
-                    <Link to={`/producto/${prod.id}`}><Button className="card__btn" variant="secondary">Detalle del producto</Button></Link> 
+                    <Link to={`/producto/${prod.id}`}><Button variant="secondary">Detalle Del Producto</Button></Link> 
                 </Card.Body>
             </Card>
         </div>
